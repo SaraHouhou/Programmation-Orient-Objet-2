@@ -46,17 +46,25 @@ public class SimplePlayList extends AbstractAudioElement implements PlayList{
 
 	@Override
 	public int getDuration() {
-
+		int result=0;
+		for (Song s :songList){
+			result+=s.getDuration();
+		}
+		return result;
 	}
 
 	@Override
 	public long getSize() {
-
+		long result=getFile().length();
+		for (Song s:songList){
+			result+=s.getSize();
+		}
+		return result;
 	}
 
 	@Override
 	public int getNbElements() {
-
+		return songList.size();
 	}
 	
 	
